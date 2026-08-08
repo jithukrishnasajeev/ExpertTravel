@@ -38,11 +38,28 @@
         <li><a href="#faq" class="nav-link">FAQ</a></li>
       </ul>
       
-      <a href="https://wa.me/393205771501" class="btn btn-primary" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i> +39 320 577 1501
-      </a>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="https://wa.me/393205771501" class="btn btn-primary" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> +39 320 577 1501
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
   </nav>
+
+  <!-- Mobile Dropdown Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#hero" class="nav-link">Home</a>
+    <a href="#destinations" class="nav-link">Destinations</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#tools" class="nav-link">Visa Assistant</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+    <a href="https://wa.me/393205771501" class="btn btn-primary" style="display: flex; justify-content: center; margin-top: 8px;" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero" id="hero">

@@ -691,7 +691,54 @@ select option:checked, select option:hover {
 }
 .floating-btn:hover { transform: scale(1.1); }
 
-/* Responsive adjustments */
+.mobile-toggle {
+  display: none;
+  background: transparent;
+  border: var(--glass-border);
+  color: var(--brand-gold);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 12, 0.95);
+  backdrop-filter: blur(24px);
+  border-bottom: var(--gold-border);
+  padding: 24px;
+  z-index: 999;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+}
+
+.mobile-menu.active {
+  display: flex;
+  animation: fadeInDown 0.3s ease;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-menu .nav-link {
+  font-size: 1.1rem;
+  padding: 10px 0;
+  border-bottom: var(--glass-border);
+}
+
+/* Responsive Overrides */
 @media (max-width: 1024px) {
   .bento-grid { grid-template-columns: 1fr 1fr; }
   .bento-large { grid-column: span 2; }
@@ -699,10 +746,67 @@ select option:checked, select option:hover {
   .stat-item:nth-child(2) { border-right: none; }
   .assistant-overlay { grid-template-columns: 1fr; padding: 40px; }
 }
+
 @media (max-width: 768px) {
-  .bento-grid, .bento-large { grid-template-columns: 1fr; grid-column: span 1; }
-  .search-widget { flex-direction: column; }
-  .search-input-group { border-right: none; border-bottom: var(--glass-border); width: 100%; }
-  .footer-grid { grid-template-columns: 1fr; }
   .nav-menu { display: none; }
+  .mobile-toggle { display: flex; }
+  .navbar .btn-primary { display: none; } /* Hide navbar CTA on small mobile to fit brand name */
+  
+  .brand-text h2 { font-size: 1.15rem; }
+  .brand-text p { font-size: 0.6rem; }
+  .brand-icon { width: 40px; height: 40px; font-size: 1.2rem; }
+  
+  .hero { padding-top: 110px; min-height: auto; padding-bottom: 60px; }
+  .hero-title { font-size: 2.2rem; margin-bottom: 16px; }
+  .hero-desc { font-size: 1rem; margin-bottom: 24px; }
+  
+  .search-widget {
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+  }
+  
+  .search-input-group {
+    border-right: none;
+    border-bottom: var(--glass-border);
+    padding: 8px 0;
+    width: 100%;
+  }
+  
+  .search-widget button {
+    width: 100%;
+    margin-top: 8px;
+  }
+  
+  .stats-section { margin-top: 0; padding: 40px 0; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; padding: 24px 16px; }
+  .stat-item { border-right: none; padding: 10px; }
+  .stat-num { font-size: 2.2rem; }
+  .stat-label { font-size: 0.85rem; }
+  
+  .section { padding: 60px 0; }
+  .section-header { margin-bottom: 36px; }
+  .section-title { font-size: 2rem; }
+  
+  .bento-grid { grid-template-columns: 1fr; gap: 16px; }
+  .bento-large, .bento-item { grid-column: span 1; min-height: auto; padding: 24px; }
+  .bento-title { font-size: 1.35rem; }
+  .bento-desc { font-size: 0.95rem; }
+  
+  .assistant-overlay { padding: 24px 16px; gap: 30px; }
+  .check-card { padding: 20px; }
+  
+  .testi-card { padding: 24px; }
+  .testi-text { font-size: 0.95rem; }
+  
+  .footer { padding: 50px 0 30px 0; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  
+  .floating-btn {
+    bottom: 24px;
+    right: 20px;
+    width: 58px;
+    height: 58px;
+    font-size: 1.8rem;
+  }
 }

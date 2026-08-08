@@ -11,8 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
     offset: 50
   });
 
-  // 2. Navbar Scroll Effect
+  // 2. Navbar Scroll Effect & Mobile Toggle
   const navbar = document.getElementById('navbar');
+  const mobileToggle = document.getElementById('mobileToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
@@ -20,6 +23,32 @@ document.addEventListener('DOMContentLoaded', () => {
       navbar.classList.remove('scrolled');
     }
   });
+
+  if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      const icon = mobileToggle.querySelector('i');
+      if (mobileMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      });
+    });
+  }
 
   // 3. Initialize Swiper Carousels
   // Destinations Slider (3D Coverflow or simple slides with gap)
