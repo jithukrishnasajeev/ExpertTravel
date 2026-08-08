@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXPERT TRAVEL SOLUTION | Premium Worldwide Visa Assistance</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Third Party Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <!-- Global Ambient Mesh Background -->
+  <div class="bg-mesh"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-plane-departure"></i></div>
+        <div class="brand-text">
+          <h2>EXPERT <span>TRAVEL</span></h2>
+          <p>Worldwide Visa Solutions</p>
+        </div>
+      </a>
+      
+      <ul class="nav-menu">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#destinations" class="nav-link">Destinations</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#tools" class="nav-link">Visa Assistant</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+      
+      <a href="https://wa.me/393205771501" class="btn btn-primary" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> +39 320 577 1501
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    
+    <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
+      <div class="badge-glow anim-float">
+        <i class="fa-solid fa-crown"></i> 100% Trusted Visa Partner
+      </div>
+      
+      <h1 class="hero-title">
+        Experience the World with <span class="text-gradient">Absolute Certainty</span>
+      </h1>
+      
+      <p class="hero-desc">
+        Premium Visit Visa assistance, bespoke travel itineraries, and express document processing for 14+ elite destinations including the UK, USA, Schengen, and Australia.
+      </p>
+      
+      <!-- Glassmorphic Booking Widget -->
+      <div class="search-widget" data-aos="fade-up" data-aos-delay="200">
+        <div class="search-input-group">
+          <label>Where To?</label>
+          <select id="heroDest">
+            <option>Italy (Specialty Hub)</option>
+            <option>United Kingdom</option>
+            <option>USA / Canada</option>
+            <option>Schengen Area</option>
+            <option>Australia / NZ</option>
+          </select>
+        </div>
+        
+        <div class="search-input-group">
+          <label>Service Type</label>
+          <select id="heroService">
+            <option>Visit Visa Filing</option>
+            <option>Custom Tour Package</option>
+            <option>Document Audit</option>
+          </select>
+        </div>
+        
+        <button class="btn btn-primary" style="padding: 18px 40px; font-size: 1.1rem;" onclick="launchHeroWhatsApp()">
+          Inquire Now <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section container">
+    <div class="stats-grid" data-aos="fade-up">
+      <div class="stat-item">
+        <div class="stat-num" data-target="5000">0</div>
+        <div class="stat-label">Visas Processed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="99">0</div>
+        <div class="stat-label">Success Rate (%)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="14">0</div>
+        <div class="stat-label">Global Destinations</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="24">0</div>
+        <div class="stat-label">Hour Support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Swiper Destinations Slider -->
+  <section class="section" id="destinations">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Global Reach</span>
+        <h2 class="section-title">Explore Our <span class="text-gradient">Top Destinations</span></h2>
+      </div>
+      
+      <div class="swiper destinations-slider" data-aos="fade-up" data-aos-delay="200">
+        <div class="swiper-wrapper">
+          <!-- Slide 1: Italy -->
+          <div class="swiper-slide">
+            <div class="dest-card">
+              <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80" class="dest-img" alt="Italy">
+              <div class="dest-flag">🇮🇹</div>
+              <div class="dest-overlay">
+                <h3 class="dest-title">Italy</h3>
+                <div class="dest-info">
+                  <span><i class="fa-solid fa-clock"></i> 7-12 Days</span>
+                  <span style="color: var(--brand-accent)"><i class="fa-solid fa-star"></i> Specialty Hub</span>
+                </div>
+                <button class="btn btn-glass" onclick="openWhatsApp('Italy Visit Visa')">Apply Now</button>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2: UK -->
+          <div class="swiper-slide">
+            <div class="dest-card">
+              <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" class="dest-img" alt="UK">
+              <div class="dest-flag">🇬🇧</div>
+              <div class="dest-overlay">
+                <h3 class="dest-title">United Kingdom</h3>
+                <div class="dest-info">
+                  <span><i class="fa-solid fa-clock"></i> 10-15 Days</span>
+                  <span><i class="fa-solid fa-check-circle"></i> Standard/Express</span>
+                </div>
+                <button class="btn btn-glass" onclick="openWhatsApp('UK Visit Visa')">Apply Now</button>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3: USA -->
+          <div class="swiper-slide">
+            <div class="dest-card">
+              <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=800&q=80" class="dest-img" alt="USA">
+              <div class="dest-flag">🇺🇸</div>
+              <div class="dest-overlay">
+                <h3 class="dest-title">United States</h3>
+                <div class="dest-info">
+                  <span><i class="fa-solid fa-clock"></i> Expedited Slots</span>
+                  <span><i class="fa-solid fa-file"></i> B1/B2 Visa</span>
+                </div>
+                <button class="btn btn-glass" onclick="openWhatsApp('USA B1/B2 Visa')">Apply Now</button>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 4: Australia -->
+          <div class="swiper-slide">
+            <div class="dest-card">
+              <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=800&q=80" class="dest-img" alt="Australia">
+              <div class="dest-flag">🇦🇺</div>
+              <div class="dest-overlay">
+                <h3 class="dest-title">Australia</h3>
+                <div class="dest-info">
+                  <span><i class="fa-solid fa-clock"></i> 12-20 Days</span>
+                  <span><i class="fa-solid fa-file"></i> Subclass 600</span>
+                </div>
+                <button class="btn btn-glass" onclick="openWhatsApp('Australia Visa')">Apply Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination" style="bottom: 0;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Box Services Section -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Premium Offerings</span>
+        <h2 class="section-title">Comprehensive <span class="text-gradient">Travel Architecture</span></h2>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Large Highlight -->
+        <div class="bento-item bento-large" data-aos="zoom-in" data-aos-delay="100">
+          <div class="bento-icon"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="bento-title">Italy Visit Visa Specialty Hub</h3>
+          <p class="bento-desc" style="max-width: 600px; font-size: 1.1rem;">
+            Exclusive Schengen visa processing for Italy, specifically catered to applicants residing in the UK, Ireland, and global citizens. We guarantee flawless VFS appointment booking, financial audit, and cover letter drafting for the highest approval likelihood.
+          </p>
+          <button class="btn btn-primary bento-action" onclick="openWhatsApp('Italy Specialty Hub')">Priority Processing</button>
+        </div>
+
+        <div class="bento-item" data-aos="zoom-in" data-aos-delay="200">
+          <div class="bento-icon"><i class="fa-solid fa-passport"></i></div>
+          <h3 class="bento-title">Global Visit Visas</h3>
+          <p class="bento-desc">Expert form filing, document structuring, and appointment scheduling for USA, Canada, UK, and all Schengen states.</p>
+          <a href="#tools" class="btn btn-glass bento-action">Check Eligibility</a>
+        </div>
+
+        <div class="bento-item" data-aos="zoom-in" data-aos-delay="300">
+          <div class="bento-icon"><i class="fa-solid fa-plane"></i></div>
+          <h3 class="bento-title">Custom Tour Packages</h3>
+          <p class="bento-desc">Fully personalized itineraries crafted to match your luxury preferences, family size, and exact travel dates.</p>
+          <button class="btn btn-glass bento-action" onclick="openWhatsApp('Custom Tour Quote')">Get Custom Quote</button>
+        </div>
+
+        <div class="bento-item" data-aos="zoom-in" data-aos-delay="400">
+          <div class="bento-icon"><i class="fa-solid fa-car-side"></i></div>
+          <h3 class="bento-title">Private Transport Tours</h3>
+          <p class="bento-desc">VIP chauffeur services and private luxury vehicle excursions for maximum comfort and privacy abroad.</p>
+          <button class="btn btn-glass bento-action" onclick="openWhatsApp('Private Transport Tour')">Book Vehicle</button>
+        </div>
+
+        <div class="bento-item" data-aos="zoom-in" data-aos-delay="500">
+          <div class="bento-icon"><i class="fa-solid fa-train"></i></div>
+          <h3 class="bento-title">Public Transport Tours</h3>
+          <p class="bento-desc">Efficient, cost-effective guided exploration using world-class rail, Eurail passes, and metro networks.</p>
+          <button class="btn btn-glass bento-action" onclick="openWhatsApp('Public Transport Tour')">View Passes</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Document Assistant (Parallax Background) -->
+  <section class="section" id="tools" style="padding: 40px 0;">
+    <div class="container">
+      <div class="assistant-box" data-aos="fade-up">
+        <div class="assistant-overlay">
+          <div>
+            <span class="section-tag">AI-Powered Tool</span>
+            <h2 class="section-title" style="font-size: 3rem; margin-bottom: 20px;">Generate Your <br><span class="text-gradient">Document Checklist</span></h2>
+            <p style="color: #CCC; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">
+              Select your origin and destination below to generate a tailored, embassy-compliant document checklist in seconds.
+            </p>
+          </div>
+          
+          <div class="check-card">
+            <div class="form-element">
+              <label>Applicant Residence</label>
+              <select id="docOrigin">
+                <option value="UK">United Kingdom (BRP Holder)</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Global">Worldwide</option>
+              </select>
+            </div>
+            <div class="form-element">
+              <label>Target Destination</label>
+              <select id="docDest">
+                <option value="Italy">Italy (Schengen)</option>
+                <option value="UK">United Kingdom</option>
+                <option value="USA">United States</option>
+                <option value="Canada">Canada</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;" onclick="generateChecklist()">
+              Generate My Checklist <i class="fa-solid fa-file-pdf"></i>
+            </button>
+            
+            <!-- Result Box -->
+            <div id="checkResult" style="display: none; margin-top: 24px; padding-top: 20px; border-top: var(--glass-border);">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials & Reviews -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Client Success</span>
+        <h2 class="section-title">What Travelers <span class="text-gradient">Say About Us</span></h2>
+      </div>
+      
+      <div class="swiper testi-slider" data-aos="fade-up" data-aos-delay="200">
+        <div class="swiper-wrapper">
+          <!-- Review 1 -->
+          <div class="swiper-slide">
+            <div class="testi-card">
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="testi-text"><i class="fa-solid fa-quote-left" style="color: var(--brand-gold); margin-right: 8px;"></i>"Applying for an Italy Schengen visa from London with a UK BRP used to feel impossible due to VFS appointment shortages. Expert Travel Solution booked our slot and verified all documents. Received our visa in 7 days!"</p>
+            </div>
+          </div>
+          <!-- Review 2 -->
+          <div class="swiper-slide">
+            <div class="testi-card">
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="testi-text"><i class="fa-solid fa-quote-left" style="color: var(--brand-gold); margin-right: 8px;"></i>"Needed an urgent visit visa to Italy from Dublin. Jesvin and the team prepared our flight itineraries, insurance proof, and cover letters effortlessly. Outstanding support on WhatsApp!"</p>
+            </div>
+          </div>
+          <!-- Review 3 -->
+          <div class="swiper-slide">
+            <div class="testi-card">
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="testi-text"><i class="fa-solid fa-quote-left" style="color: var(--brand-gold); margin-right: 8px;"></i>"We booked the Private Transport Tour Package for 10 days across Italy & Austria. Luxury chauffeur, seamless transfers, and zero travel stress. Highly recommended!"</p>
+            </div>
+          </div>
+          <!-- Review 4 -->
+          <div class="swiper-slide">
+            <div class="testi-card">
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="testi-text"><i class="fa-solid fa-quote-left" style="color: var(--brand-gold); margin-right: 8px;"></i>"Secured both my UK Visitor Visa and Canada TRV through Expert Travel Solution. Their documentation audit is second to none. They caught errors in my financial proof that saved my application!"</p>
+            </div>
+          </div>
+          <!-- Review 5 -->
+          <div class="swiper-slide">
+            <div class="testi-card">
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="testi-text"><i class="fa-solid fa-quote-left" style="color: var(--brand-gold); margin-right: 8px;"></i>"Superb Public Transport Tour package around Europe! Rail passes, central hotel reservations, and clear daily guides made our family trip budget-friendly and fun."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="section" id="faq" style="background: rgba(20,20,22,0.5);">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Frequently Asked <span class="text-gradient">Questions</span></h2>
+      </div>
+      
+      <div class="faq-wrapper" data-aos="fade-up" data-aos-delay="200">
+        <div class="faq-item">
+          <div class="faq-q">What is the specialty for Italy Visit Visas? <i class="fa-solid fa-plus"></i></div>
+          <div class="faq-a">We have direct expertise in the specific requirements for VFS Italy in the UK and Ireland. We assist with rapid appointment booking, flawless financial auditing, and cover letters that maximize your approval chance.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How long does a Schengen Visa take to process? <i class="fa-solid fa-plus"></i></div>
+          <div class="faq-a">Typically, it takes 7 to 15 working days after the biometric appointment, though it can vary based on the embassy and nationality.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you provide Flight and Hotel itineraries for visa? <i class="fa-solid fa-plus"></i></div>
+          <div class="faq-a">Yes, our complete documentation service includes providing verified flight reservations and hotel bookings specifically for embassy submission.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom: 24px;">
+            <div class="brand-icon"><i class="fa-solid fa-plane-departure"></i></div>
+            <div class="brand-text">
+              <h2>EXPERT <span>TRAVEL</span></h2>
+            </div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Your ultimate partner for luxury travel, flawless visa processing, and worldwide documentation support.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title text-gradient">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#destinations">Destinations Hub</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title text-gradient">Top Services</h4>
+          <ul class="footer-links">
+            <li><a href="#">Italy Schengen Hub</a></li>
+            <li><a href="#">USA/Canada Visa</a></li>
+            <li><a href="#">Custom Tours</a></li>
+            <li><a href="#">Private Transport</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title text-gradient">Contact Us</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+393205771501"><i class="fa-solid fa-phone" style="color: var(--brand-gold)"></i> +39 320 577 1501</a></li>
+            <li><a href="mailto:travel.jesvin@gmail.com"><i class="fa-solid fa-envelope" style="color: var(--brand-gold)"></i> travel.jesvin@gmail.com</a></li>
+            <li style="margin-top: 16px;">
+              <button class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;" onclick="openWhatsApp('General Inquiry')">
+                <i class="fa-brands fa-whatsapp"></i> Chat Now
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: var(--glass-border); padding-top: 24px; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+        &copy; 2026 Expert Travel Solution. All Rights Reserved. Travel with Confidence.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Contact Button -->
+  <a href="javascript:void(0)" onclick="openWhatsApp('Direct Website Inquiry')" class="floating-btn">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
