@@ -2,6 +2,16 @@
  * EXPERT TRAVEL SOLUTION - V2 Interactions & Animations
  */
 
+// 0. Brand Preloader Handler
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+    }, 1600);
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Initialize AOS (Animate on Scroll)
   AOS.init({

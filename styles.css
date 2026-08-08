@@ -748,17 +748,37 @@ select option:checked, select option:hover {
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: 12px 0;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(20px);
+  }
   .nav-menu { display: none; }
   .mobile-toggle { display: flex; }
   .navbar .btn-primary { display: none; } /* Hide navbar CTA on small mobile to fit brand name */
   
-  .brand-text h2 { font-size: 1.15rem; }
+  .brand-text h2 { font-size: 1.1rem; }
   .brand-text p { font-size: 0.6rem; }
-  .brand-icon { width: 40px; height: 40px; font-size: 1.2rem; }
+  .brand-icon { width: 38px; height: 38px; font-size: 1.1rem; }
   
-  .hero { padding-top: 110px; min-height: auto; padding-bottom: 60px; }
-  .hero-title { font-size: 2.2rem; margin-bottom: 16px; }
-  .hero-desc { font-size: 1rem; margin-bottom: 24px; }
+  .hero { 
+    padding-top: calc(130px + env(safe-area-inset-top, 20px)); 
+    min-height: auto; 
+    padding-bottom: 50px; 
+  }
+  .hero-bg {
+    background-attachment: scroll; /* Fixes iOS Safari background rendering bug */
+  }
+  .badge-glow {
+    font-size: 0.72rem;
+    padding: 6px 12px;
+    margin-bottom: 16px;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+  .hero-title { font-size: 2rem; margin-bottom: 16px; line-height: 1.25; }
+  .hero-desc { font-size: 0.95rem; margin-bottom: 24px; }
   
   .search-widget {
     flex-direction: column;
@@ -809,4 +829,140 @@ select option:checked, select option:hover {
     height: 58px;
     font-size: 1.8rem;
   }
+}
+
+/* ==========================================
+   Premium Brand Preloader Splash Screen
+   ========================================== */
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #0B0E1B 0%, #040406 100%);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1), visibility 0.8s ease, transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.preloader-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.05);
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+}
+
+.preloader-logo-ring {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-logo-icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 22px;
+  background: var(--grad-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  color: #000;
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
+  animation: logoPulse 2s ease-in-out infinite alternate;
+}
+
+.preloader-orbit {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  border-top: 2px solid var(--brand-gold);
+  border-right: 2px solid var(--brand-accent);
+  border-radius: 50%;
+  animation: orbitRotate 1.8s linear infinite;
+}
+
+@keyframes orbitRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes logoPulse {
+  0% { transform: scale(0.96); box-shadow: 0 0 25px rgba(212, 175, 55, 0.3); }
+  100% { transform: scale(1.04); box-shadow: 0 0 45px rgba(212, 175, 55, 0.7); }
+}
+
+.preloader-brand h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #FFF;
+  margin-bottom: 4px;
+}
+
+.preloader-brand span {
+  color: var(--brand-gold);
+}
+
+.preloader-tagline {
+  font-size: 0.75rem;
+  color: var(--brand-accent);
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.preloader-progress-box {
+  width: 240px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.preloader-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--grad-gold);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+  border-radius: 100px;
+  animation: progressFill 1.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes progressFill {
+  0% { width: 0%; }
+  50% { width: 65%; }
+  100% { width: 100%; }
+}
+
+.preloader-slogan {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 1px;
+  animation: sloganFade 2s ease-in-out infinite alternate;
+}
+
+@keyframes sloganFade {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; color: var(--brand-gold-light); }
 }
